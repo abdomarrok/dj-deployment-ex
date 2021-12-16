@@ -16,8 +16,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 #TEMPLATE_DIRS=(os.path.join(BASE_DIR,"templates"),)
-STATIC_DIR=os.path.join(BASE_DIR,"static")
-MEDIA_DIR=os.path.join(BASE_DIR,"media")
+STATIC_DIR=BASE_DIR / 'static'
+MEDIA_DIR=BASE_DIR/'media'
 
 
 # Quick-start development settings - unsuitable for production
@@ -131,8 +131,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[STATIC_DIR,]
-MEDIA_ROOT=MEDIA_DIR
+
 MEDIA_URL='media/'
+MEDIA_ROOT=BASE_DIR/'media'
 
 LOGIN_URL='basic_app/user_login'
 
